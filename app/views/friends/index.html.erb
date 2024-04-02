@@ -1,0 +1,41 @@
+
+
+
+<% if user_signed_in? %>
+
+<h1>Friends</h1>
+
+<table class="table table-bordered table-hover">
+  <thead class="thead-dark">
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Twitter</th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <div id="friends">
+    <% @friends.each do |friend| %>
+
+    <% if friend.user == current_user %>
+    <tr>
+ <td><%= link_to friend.first_name + ' ' + friend.last_name , friend %></td>
+      <td><%= friend.email %></td>
+      <td><%= friend.phone %></td> 
+      <td><%= friend.twitter %></td>
+      <td><%=button_to "Destroy this friend", friend, class: "btn btn-outline-danger", method: :delete %></td> 
+       
+    </tr>
+      <% end %>
+    <% end %>
+     </div>
+  </tbody>
+</table>
+
+<% else %>
+
+  <h1>Welcome to Friends App</h1>
+
+<% end %>
