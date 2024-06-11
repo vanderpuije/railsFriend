@@ -3,9 +3,11 @@
 <div class="jumbotron">
   <h1 class="display-4"><%= friend.first_name %> <%= friend.last_name %></h1>
   <p class="lead">
-    <%= friend.email %>| 
-    <%= friend.phone %> |
-    <%= friend.twitter %>
+    Email: <%= friend.email %> 
+    Phone: <%= friend.phone %> 
+    Twitter: <%= friend.twitter %>
+    Location: <%= friend.location %>
+    Hint: <%= friend.hint %>
   </p>
 
    <%= link_to "Edit this friend", edit_friend_path(@friend), class: "btn btn-secondary" %> |

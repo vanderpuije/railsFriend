@@ -1,2 +1,15 @@
-<h1>Welcome to Friends App</h1>
 
+<div class="jumbotron">
+  <div class="wrap">
+      <h1 class="display-4">Welcome to Friends App!</h1>
+     <hr class="my-4">
+       <p>This is a platform where you can keep track of all the details of your friends in one place</p>
+
+  <% if user_signed_in? %>
+     <%= link_to "Add a friend", new_friend_path, class: "btn btn-success btn-lg " %>
+     <%= link_to "Check your friends list", friends_path, class: "btn btn-primary btn-lg " %>
+      <% else %>
+    <%= link_to 'Sign In ',  new_user_session_path, class:"btn btn-primary btn-lg"  %>
+  <% end %>
+  </div>
+</div>

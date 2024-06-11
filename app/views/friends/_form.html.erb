@@ -35,6 +35,16 @@
     <%= form.number_field :user_id, id: :friend_user_id, class: "form-control", value: current_user.id, type: :hidden %>
   </div>
 
+    <div class="field form-group">
+    <%= form.text_field :location, class: "form-control", placeholder: "Location" %>
+  </div>
+
+     <div class="field form-group">
+    <%= form.text_field :hint, class: "form-control", placeholder: "Hint" %>
+  </div>
+
+
+
   <div>
     <%= form.submit class: "btn btn-success" %>
   </div>

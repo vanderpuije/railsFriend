@@ -5,13 +5,15 @@
 
 <h1>Friends</h1>
 
-<table class="table table-bordered table-hover">
+<table class="table table-dark table-bordered table-hover">
   <thead class="thead-dark">
     <tr>
       <th>Name</th>
       <th>Email</th>
       <th>Phone</th>
       <th>Twitter</th>
+      <th>Location</th>
+      <th>Hint</th>
       <th> </th>
     </tr>
   </thead>
@@ -25,6 +27,8 @@
       <td><%= friend.email %></td>
       <td><%= friend.phone %></td> 
       <td><%= friend.twitter %></td>
+      <td><%= friend.location %></td>
+      <td><%= friend.hint %></td>
       <td><%=button_to "Destroy this friend", friend, class: "btn btn-outline-danger", method: :delete %></td> 
        
     </tr>
@@ -34,8 +38,6 @@
   </tbody>
 </table>
 
-<% else %>
-
-  <h1>Welcome to Friends App</h1>
+<%= link_to "Add a new friend", new_friend_path, class: "btn btn-success btn-lg " %>
 
 <% end %>
